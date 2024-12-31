@@ -7,13 +7,26 @@ import { Component } from '@angular/core';
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-    handleClickEvent(){
-      console.log("Function Call")
-      this.otherFunction();
-      
+   count:number=0
+    increment(){
+      this.count++
     }
-    otherFunction(){
-      console.log("other function");
-      
+    decrement(){
+      this.count--
     }
-}
+    reset(){
+      this.count=0
+    }
+
+    handleCounter(val:string){
+      if(val==='increment'){
+        this.increment()
+      }
+      else if(val==='decrement'){
+        this.decrement()
+      }
+      else{
+        this.reset()
+      }
+    }
+  }
