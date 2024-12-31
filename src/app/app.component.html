@@ -1,12 +1,15 @@
-<h1>Counter App</h1>
-<div style="text-align: center;">
-    <h2 class="count">{{count}}</h2>
-    <!-- <button class="btn bg-red" (click)="decrement()">Decrement</button>
-    <button class="btn bg-black" (click)="reset()">Reset</button>
-    <button class="btn bg-green" (click)="increment()">Increment</button> -->
+<h1>Get and Set Input Field Value</h1>
+<!-- <h1>User Name is:{{name}}</h1> -->
+<h1>User Name is:{{displayName}}</h1>
+<input type="text" value="{{name}}" placeholder="Enter User Name" (input)="getName($event)">
+<br>
+<br>
+<button (click)="showName()">Get Value</button>
+<button (click)="setName()">Set Name</button>
+<hr>
 
+<h1>Email:{{email}}</h1>
+<input type="text" placeholder="Enter Email" #emailField>
+<button (click)="getEmail(emailField.value)">Get Email</button>
+<button >Set Email</button>
 
-    <button class="btn bg-red" (click)="handleCounter('decrement')">Decrement</button>
-    <button class="btn bg-black" (click)="handleCounter('reset')">Reset</button>
-    <button class="btn bg-green" (click)="handleCounter('increment')">Increment</button>
-</div>

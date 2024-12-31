@@ -7,26 +7,28 @@ import { Component } from '@angular/core';
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-   count:number=0
-    increment(){
-      this.count++
-    }
-    decrement(){
-      this.count--
-    }
-    reset(){
-      this.count=0
-    }
+   name=""
+   displayName=""
+    email=""
 
-    handleCounter(val:string){
-      if(val==='increment'){
-        this.increment()
-      }
-      else if(val==='decrement'){
-        this.decrement()
-      }
-      else{
-        this.reset()
-      }
-    }
+   getName(event:Event){
+    const name=(event.target as HTMLInputElement).value;
+    // console.log(name);
+    this.name=name;
+    
+    
+   }
+   showName(){
+    this.displayName=this.name;
+
+   }
+   setName(){
+    this.name="Sam";
+   }
+   getEmail(val:string){
+    console.log(val);
+    this.email=val;
+    
+   }
+    
   }
